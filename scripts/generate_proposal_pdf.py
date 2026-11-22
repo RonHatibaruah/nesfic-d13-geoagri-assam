@@ -216,10 +216,15 @@ def build_proposal_pdf(output_path):
           "<b>Workflow Shift:</b> Replaces multi-week paper routing with <b>GeoAgri-Assam</b>, automating satellite ingestion (Sentinel-1/2, Cartosat DEM) to rank fallows with >88% accuracy.")
     story.append(Paragraph(p1, body_style))
 
-    # Visual 1: Workflow Comparison
+    # Visual 1.1: Workflow Comparison
     if os.path.exists('pdf_assets/workflow_comparison.png'):
-        story.append(Image('pdf_assets/workflow_comparison.png', width=520, height=160))
+        story.append(Image('pdf_assets/workflow_comparison.png', width=520, height=140))
         story.append(Paragraph("Figure 1.1: Operational Transformation: Legacy Paper Cadastre vs. GeoAgri AI Cloud GIS Workflow", caption_style))
+
+    # Visual 1.2: Assam AEZ Map
+    if os.path.exists('pdf_assets/assam_aez_map.png'):
+        story.append(Image('pdf_assets/assam_aez_map.png', width=510, height=170))
+        story.append(Paragraph("Figure 1.2: Assam 6 Official Agro-Ecological Zones (AEZ): Calibration Baseline for Regional Fallows", caption_style))
 
     story.append(PageBreak())
 
@@ -235,10 +240,17 @@ def build_proposal_pdf(output_path):
           "• <b>Interactive Web GIS & Mobile PWA:</b> High-performance Leaflet/MapLibre dashboard for DAOs and an offline GPS app for local ADO ground verification.")
     story.append(Paragraph(p2, body_style))
 
-    # Visual 2: Solution Anatomy
+    # Visual 2.1: Solution Anatomy
     if os.path.exists('pdf_assets/solution_anatomy_pillars.png'):
-        story.append(Image('pdf_assets/solution_anatomy_pillars.png', width=510, height=155))
+        story.append(Image('pdf_assets/solution_anatomy_pillars.png', width=510, height=140))
         story.append(Paragraph("Figure 2.1: GeoAgri-Assam 4 Core Functional Engine Modules", caption_style))
+
+    # Visual 2.2: AI Crop Suitability Matrix
+    if os.path.exists('pdf_assets/crop_suitability_matrix.png'):
+        story.append(Image('pdf_assets/crop_suitability_matrix.png', width=510, height=160))
+        story.append(Paragraph("Figure 2.2: AI Crop Recommendation Clusters & Expected Producer Gross Margins across Assam", caption_style))
+
+    story.append(PageBreak())
 
     # SECTION 3
     story.append(Paragraph("3. Describe User Journey, Wireframes, Prototype & Proof of Work", sec_header_style))
@@ -252,12 +264,10 @@ def build_proposal_pdf(output_path):
           "<b>Proof of Work:</b> A functional prototype is live at <b>https://nesfic-d13-geoagri-assam.pages.dev</b> (GitHub: <b>https://github.com/RonHatibaruah/nesfic-d13-geoagri-assam</b>). Pilot validation over 120 km² in Central Assam achieved 89.2% F1-score.")
     story.append(Paragraph(p3, body_style))
 
-    # Visual 3: Dashboard UI Layout
+    # Visual 3.1: Dashboard UI Layout
     if os.path.exists('pdf_assets/dashboard_ui_preview.png'):
-        story.append(Image('pdf_assets/dashboard_ui_preview.png', width=520, height=200))
+        story.append(Image('pdf_assets/dashboard_ui_preview.png', width=520, height=185))
         story.append(Paragraph("Figure 3.1: Live GeoAgri Web GIS Dashboard Interface (Map Canvas, Filter Sidebar, and Parcel Dossier Drawer)", caption_style))
-
-    story.append(PageBreak())
 
     # SECTION 4
     story.append(Paragraph("4. Technology & Solution Architecture", sec_header_style))
@@ -271,10 +281,17 @@ def build_proposal_pdf(output_path):
           "• <b>Hosting & Security:</b> Cloudflare Pages Edge CDN, Docker containers ready for deployment on Assam State Data Centre (SDC) or NIC MeghRaj Cloud.")
     story.append(Paragraph(p4, body_style))
 
-    # Visual 4: Cloud Tech Stack
+    # Visual 4.1: Cloud Tech Stack
     if os.path.exists('pdf_assets/cloud_tech_stack.png'):
-        story.append(Image('pdf_assets/cloud_tech_stack.png', width=510, height=145))
+        story.append(Image('pdf_assets/cloud_tech_stack.png', width=510, height=135))
         story.append(Paragraph("Figure 4.1: Cloud-Native Microservices Architecture with Open-Source Spatial Standards", caption_style))
+
+    # Visual 4.2: DEM Slope
+    if os.path.exists('pdf_assets/cartosat_dem_slope.png'):
+        story.append(Image('pdf_assets/cartosat_dem_slope.png', width=510, height=155))
+        story.append(Paragraph("Figure 4.2: Cartosat 30m DEM Topography & Slope Suitability Zoning", caption_style))
+
+    story.append(PageBreak())
 
     # SECTION 5
     story.append(Paragraph("5. Development Methodology & Intermediate Steps", sec_header_style))
@@ -288,15 +305,13 @@ def build_proposal_pdf(output_path):
           "6. <b>Hardening & Handover (W21–W24):</b> VAPT security audit, CERT-In compliance, Assam SDC deployment, and departmental training.")
     story.append(Paragraph(p5, body_style))
 
-    story.append(PageBreak())
-
     # SECTION 6 - Roadmap & Table
     story.append(Paragraph("6. Development Timeline & Milestones", sec_header_style))
     story.append(Paragraph("STATUS: SUBMISSION READY • WORD COUNT: 380 / 500 WORDS", sec_tag_style))
     
-    # Visual 5: Gantt Roadmap
+    # Visual 6.1: Gantt Roadmap
     if os.path.exists('pdf_assets/gantt_roadmap.png'):
-        story.append(Image('pdf_assets/gantt_roadmap.png', width=510, height=145))
+        story.append(Image('pdf_assets/gantt_roadmap.png', width=510, height=135))
         story.append(Paragraph("Figure 6.1: 24-Week Phased Development Roadmap with Month 4 Field Validation Readiness", caption_style))
 
     timeline_data = [
@@ -377,9 +392,9 @@ def build_proposal_pdf(output_path):
            "• <i>Human-in-the-Loop Safeguard:</i> AI acts strictly as an advisory Decision Support System; final land allocations mandate physical sign-off by the jurisdictional Agricultural Development Officer.")
     story.append(Paragraph(p10, body_style))
 
-    # Visual 6: Governance Badge
+    # Visual 10.1: Governance Badge
     if os.path.exists('pdf_assets/governance_security_badge.png'):
-        story.append(Image('pdf_assets/governance_security_badge.png', width=510, height=125))
+        story.append(Image('pdf_assets/governance_security_badge.png', width=510, height=120))
         story.append(Paragraph("Figure 10.1: Institutional Governance, Privacy Safeguards, and Regulatory Compliance Framework", caption_style))
 
     story.append(PageBreak())
@@ -394,12 +409,12 @@ def build_proposal_pdf(output_path):
            "<b>Advantage over Alternatives:</b> Bi-weekly satellite refresh (vs decadal records), 10m high resolution (vs coarse 250m), cloud-penetrating SAR (vs cloud-blind optical), and an interactive web GIS requiring zero desktop GIS installation.")
     story.append(Paragraph(p11, body_style))
 
-    # Visual 7: Feature Comparison Radar
+    # Visual 11.1: Feature Comparison Radar
     if os.path.exists('pdf_assets/feature_comparison_radar.png'):
-        story.append(Image('pdf_assets/feature_comparison_radar.png', width=510, height=185))
+        story.append(Image('pdf_assets/feature_comparison_radar.png', width=510, height=170))
         story.append(Paragraph("Figure 11.1: Comparative Benchmark: GeoAgri vs. Conventional Revenue Records vs. Bhuvan LULC", caption_style))
 
-    # SECTION 12
+    # SECTION 12 & Visual
     story.append(Paragraph("12. Resources, Risks & Pilot Validation", sec_header_style))
     story.append(Paragraph("STATUS: SUBMISSION READY • WORD COUNT: 420 / 500 WORDS", sec_tag_style))
     p12 = ("<b>Resources & Cost Drivers:</b> Satellite data cost is <b>Rs. 0 (Zero)</b>, leveraging open-access ESA Copernicus and ISRO Bhuvan assets. Cloud hosting (4-node K8s cluster, 5TB storage) is estimated at Rs. 45,000–Rs. 65,000/month. Personnel constitutes ~70% of initial development.<br/>"
@@ -409,13 +424,19 @@ def build_proposal_pdf(output_path):
            "• <i>Sparse Soil Data:</i> Spatial Kriging ensemble interpolates soil fertility proxies, validated against KVK benchmarks.<br/>"
            "<b>Pilot Validation:</b> Deployed across two contrasting districts—Kamrup Rural (high alluvial fallows) and Barpeta (riverine char basin). Validated with 150 ground soil test points with target accuracy ≥88% and ADO usability score >85%.")
     story.append(Paragraph(p12, body_style))
+
+    # Visual 12.1: FPO Aggregation Model
+    if os.path.exists('pdf_assets/fpo_aggregation_model.png'):
+        story.append(Image('pdf_assets/fpo_aggregation_model.png', width=510, height=160))
+        story.append(Paragraph("Figure 12.1: Socio-Economic Convergence: Aggregating Fragmented Fallows into High-Yield FPO Clusters", caption_style))
+
     story.append(Spacer(1, 6))
 
     # SUPPORTING MATERIAL
     story.append(Paragraph("Supporting Material & Online Endpoints", sec_header_style))
     p_sup = ("• <b>Live Web Application URL:</b> https://nesfic-d13-geoagri-assam.pages.dev<br/>"
              "• <b>GitHub Source Code Repository:</b> https://github.com/RonHatibaruah/nesfic-d13-geoagri-assam<br/>"
-             "• <b>Proof of Work Document:</b> NESFIC_D13_Proof_of_Work_and_Evidence.pdf (includes 10 empirical figures, FCC analysis, SAR silt backscatter curves, and AHP matrices).")
+             "• <b>Proof of Work Document:</b> NESFIC_D13_Proof_of_Work_and_Evidence.pdf (includes 16 empirical figures, SAR scattering physics, FCC analysis, and AHP matrices).")
     story.append(Paragraph(p_sup, body_style))
 
     doc.build(story, canvasmaker=NumberedCanvas)
