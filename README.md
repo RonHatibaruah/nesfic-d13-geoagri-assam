@@ -5,9 +5,15 @@
 > *Department of Science & Technology (Assam State Space Application Centre - ASSAC) | Directorate of Agriculture*
 
 ![GeoAgri-Assam](https://img.shields.io/badge/Platform-GeoAgri--Assam-emerald)
-![Status](https://img.shields.io/badge/Status-Prototype%20Validated-brightgreen)
+![Status](https://img.shields.io/badge/Status-Live%20on%20Cloudflare-brightgreen)
+![Deployment](https://img.shields.io/badge/Live%20Demo-nesfic--d13--geoagri--assam.pages.dev-blue)
 ![Remote%20Sensing](https://img.shields.io/badge/Remote%20Sensing-Sentinel--1%2F2%20%7C%20Cartosat-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
+## 🌐 Live Production URL
+🔗 **[https://nesfic-d13-geoagri-assam.pages.dev](https://nesfic-d13-geoagri-assam.pages.dev)**
 
 ---
 
